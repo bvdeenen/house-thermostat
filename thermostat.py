@@ -16,12 +16,10 @@ def interpret_schedule():
     if not active:
         return schedule['Tdefault']
 
-    print(active)
     hm = now.strftime("%H:%M")
     Temp = None
     for d in active:
         if hm > d['t']:
-            print(d)
             Temp = d['T']
 
     return Temp if Temp else schedule['Tdefault']
